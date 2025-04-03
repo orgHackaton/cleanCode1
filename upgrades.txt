@@ -27,3 +27,4 @@
 - Para modifciar los secretos, acceder al repositorio de la organización > secrets and variables > actions > repository secrets
 
 ---------------- PRUEBAS SIN PARAMETRIZAR ----------------------
+- Permitimos parametrizar la version del test a realizar, que ademas se hace en una custom action.

@@ -24,3 +24,11 @@ jobs:
           enable-firewall: 'false'
           stop-apache: 'true'
           nginx-config-file: '/etc/nginx/sites-available/default'
+      
+      - name: Build
+        uses: ./github/actions/build
+
+      - name: Tests
+        uses: ./github/actions/tests
+        with:
+          version: 3
