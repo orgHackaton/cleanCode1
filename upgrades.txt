@@ -18,6 +18,7 @@
 - También hemos restringidos los push a PROD
 
 ---------------- DEPENDENCIA DE VALORES HARDCODEADOS ----------
+- Hemos agregado inpus a la action de configuración, para poder cambiar rutas y valores rápidamente desde el worflow que llama a la custom action.
 
 ---------------- REUTILIZACIÓN DE SCRIPTS ---------------------
 

@@ -57,6 +57,6 @@ runs:
         sudo systemctl restart nginx
 
         # Ajustar permisos y propietario
-        sudo chmod -R 755 ${{ inputs.web-dir }}
-        sudo chown -R www-data:www-data ${{ inputs.web-dir }}
+        echo "chmod -R 755 ${{ inputs.web-dir }}"
+        echo "sudo chown -R www-data:www-data ${{ inputs.web-dir }}"
       shell: bash
