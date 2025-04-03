@@ -1,6 +1,5 @@
 ---------------- CI y CD MEZCLADOS ----------------
 - Hemos creado una custom action para la instalación de paquetes
-- Hemos creado una custom action para la declaración de variables
 - Hemos creado una custom action para aplicar las configuraciones necesarias
 
 ---------------- DESPLIEGUES AUTOMATICOS ----------------
