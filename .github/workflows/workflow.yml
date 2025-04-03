@@ -9,6 +9,10 @@ on:
         description: 'Entorno donde desplegar (DEV o PROD)'
         required: true
         default: 'DEV'
+        type: choice
+        options:
+            - DEV
+            - PROD
 
 jobs:  
   build-and-deploy:    
@@ -39,7 +43,7 @@ jobs:
       - name: Tests
         uses: ./.github/actions/tests
         with:
-          version: 3
+          version-usada: 3
 
       - name: Deploy
         run: echo "Desplegando en ${{ github.job_environment.name }}"
