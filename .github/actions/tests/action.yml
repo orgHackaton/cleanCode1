@@ -1,6 +1,6 @@
 name: tests
 inputs:
-    version-usada:
+    version:
       description: 'Version del test a ejecutar'
       default: 2
       required: true
