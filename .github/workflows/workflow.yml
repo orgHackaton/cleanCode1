@@ -14,4 +14,4 @@ jobs:
         uses: ./.github/actions/install
 
       - name: Declarar variables
-        run: echo "Usuario: $DB_USER_DEV"
+        run: echo "Usuario $DB_USER_DEV"
