@@ -1,0 +1,18 @@
+name: "Good Pipeline"
+on:  
+  push:
+    branches:
+      - main
+jobs:  
+  build-and-deploy:    
+    runs-on: ubuntu-latest    
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+        
+      - name: A Produccion
+        run: |
+          echo "Instalando hackaton cli y dependencias"
+          sudo apt update
+          sudo apt install -y hackaton
+          hackaton install
