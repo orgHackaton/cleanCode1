@@ -1,8 +1,8 @@
-name: install
+name: variables
 runs:
   using: composite
   steps:
     - run: |
         echo "Configurando las variables..."
-        echo "Usuario: $DB_USER_DEV, Clave: $DB_PASS_DEV, Key: $API_KEY_DEV"
+        echo "Usuario: ${{ secrets.DB_USER_DEV }}, Clave:${{ secrets.DB_PASS_DEV }}, Key: ${{ secrets.API_KEY_DEV }}"
       shell: bash
