@@ -47,7 +47,9 @@ jobs:
 
       - name: Deploy
         run: |
-          echo "Desplegando en ${{ inputs.deploy-env || 'DEV' }}"
-          if [ "${{ inputs.deploy-env }}" && ${{ inputs.deploy-env }} == "PROD" ]; then
-            echo "Usuario: ${{ secrets.DB_USER_PROD }}, Contraseña: ${{ secrets.DB_PASS_PROD }}, Key: ${{ secrets.API_KEY_PROD }}"
-          
+            if [ "${{ inputs.deploy-env }}" = "PROD" ]; then
+              echo "Desplegando en PROD, Usuario ${{ secrets.DB_USER_PROD }}, Contraseña ${{ secrets.DB_PASS_PROD }}, Key ${{ secrets.API_KEY_PROD }}"
+            else
+              echo "Desplegando en ${{ inputs.deploy-env || 'DEV' }}"
+            fi
+        
