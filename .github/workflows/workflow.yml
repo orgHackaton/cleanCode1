@@ -11,8 +11,6 @@ jobs:
         uses: actions/checkout@v3
         
       - name: A Produccion
-        run: |
-          echo "Instalando hackaton cli y dependencias"
-          sudo apt update
-          sudo apt install -y hackaton
-          hackaton install
+        uses: ./.github/actions/install
+
+        

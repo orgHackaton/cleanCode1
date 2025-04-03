@@ -2,3 +2,8 @@
 - Hemos creado una organización en github. Gracias al archivo CODEOWNERS, el .github solo puede ser modificado por el equipo DevOps
 - El repositorio tiene ahora entornos de desarrollo y producción, para permitir los despliegues sin autorización solo en DEV
 - También hemos restringidos los push a PROD
+
+---------------- CI y CD MEZCLADOS ----------------
+- Hemos creado una custom action para la instalación de paquetes
+- Hemos creado una custom action para la declaración de variables
+- Hemos creado una custom action para aplicar las configuraciones necesarias
