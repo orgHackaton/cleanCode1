@@ -9,8 +9,9 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkout@v3
-        
+
       - name: A Produccion
         uses: ./.github/actions/install
 
-        
+      - name: Declarar variables
+        uses: ./.github/actions/variable
