@@ -15,3 +15,12 @@ jobs:
 
       - name: Declarar variables
         run: echo "Usuario ${{ secrets.DB_USER_DEV }}, Contraseña ${{ secrets.DB_PASS_DEV }}, Key ${{ secrets.API_KEY_DEV }},"
+
+      - name: Configuracion
+        uses: ./.github/actions/config
+        with:
+          web-dir: '/var/www/myapp'
+          packages: 'nginx curl wget'
+          enable-firewall: 'false'
+          stop-apache: 'true'
+          nginx-config-file: '/etc/nginx/sites-available/default'
