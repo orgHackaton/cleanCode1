@@ -50,8 +50,8 @@ runs:
         # Hacer copia de seguridad de la configuración de Nginx
         sudo cp ${{ inputs.nginx-config-file }} ${{ inputs.nginx-config-file }}-backup
 
-        # Modificar el directorio raíz de Nginx
-        sudo sed -i "s/root \/var\/www\/html;/root ${{ inputs.web-dir }};/" ${{ inputs.nginx-config-file }}
+        # Modificar el directorio raíz de Nginx (usar # como delimitador)
+        sudo sed -i "s#root /var/www/html;#root ${{ inputs.web-dir }};#" ${{ inputs.nginx-config-file }}
 
         # Reiniciar Nginx
         sudo systemctl restart nginx
