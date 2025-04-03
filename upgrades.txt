@@ -11,7 +11,7 @@
 ----------------- CI y CD MEZCLADOS ------------------------------------
 - Hemos creado una custom action para la instalación de paquetes
 - Hemos creado una custom action para aplicar las configuraciones necesarias
-- No hemos hecho uan custom action para las variables porque habría que pasarle los secretos como inputs, y no lo hemos visto necesario porque es lo único que hacía el código era recuperar las variables.
+- No hemos hecho una custom action para las variables porque habría que pasarle los secretos como inputs, y no lo hemos visto necesario porque es lo único que hacía el código era recuperar las variables.
 
 ---------------- DESPLIEGUES AUTOMATICOS --------------------------------
 - Hemos creado una organización en github. Gracias al archivo CODEOWNERS, el .github solo puede ser modificado por el equipo DevOps

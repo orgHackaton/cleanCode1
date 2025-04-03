@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+  workflow_dispatch:  # Permite ejecución manual
     inputs:
       deploy-env:
         description: 'Entorno donde desplegar (DEV o PROD)'
@@ -11,29 +11,24 @@ on:
         default: 'DEV'
         type: choice
         options:
-          - DEV
-          - PROD
+            - DEV
+            - PROD
 
 jobs:  
   build-and-deploy:    
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.deploy-env || 'DEV' }}
+    environment: ${{ inputs.deploy-env || 'DEV' }}
     steps:
       - name: Checkout código
         uses: actions/checkout@v3
 
-      - name: A Producción
+      - name: A Produccion
         uses: ./.github/actions/install
 
       - name: Declarar variables
-        run: |
-          if [ "${{ github.job_environment.name }}" == "PROD" ]; then
-            echo "Usuario: ${{ secrets.DB_USER_PROD }}, Contraseña: ${{ secrets.DB_PASS_PROD }}, Key: ${{ secrets.API_KEY_PROD }}"
-          else
-            echo "Usuario: ${{ secrets.DB_USER_DEV }}, Contraseña: ${{ secrets.DB_PASS_DEV }}, Key: ${{ secrets.API_KEY_DEV }}"
-          fi
+        run: echo "Usuario ${{ secrets.DB_USER_DEV }}, Contraseña ${{ secrets.DB_PASS_DEV }}, Key ${{ secrets.API_KEY_DEV }}"
 
-      - name: Configuración
+      - name: Configuracion
         uses: ./.github/actions/config
         with:
           web-dir: '/var/www/myapp'
@@ -52,7 +47,7 @@ jobs:
 
       - name: Deploy
         run: |
-          echo "Desplegando en ${{ github.job_environment.name }}"
-          if [ "${{ github.job_environment.name }}" == "PROD" ]; then
+          echo "Desplegando en ${{ inputs.deploy-env || 'DEV' }}"
+          if [ "${{ inputs.deploy-env }}" && ${{ inputs.deploy-env }} == "PROD" ]; then
             echo "Usuario: ${{ secrets.DB_USER_PROD }}, Contraseña: ${{ secrets.DB_PASS_PROD }}, Key: ${{ secrets.API_KEY_PROD }}"
-         
+          
