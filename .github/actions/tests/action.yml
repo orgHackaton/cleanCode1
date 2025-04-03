@@ -8,5 +8,5 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: echo "Ejecutando tests ${{version}}"
+    - run: echo "Ejecutando tests ${{inputs.version}}"
       shell: bash

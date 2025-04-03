@@ -43,7 +43,7 @@ jobs:
       - name: Tests
         uses: ./.github/actions/tests
         with:
-          version-usada: 3
+          version: 3
 
       - name: Deploy
         run: echo "Desplegando en ${{ github.job_environment.name }}"
