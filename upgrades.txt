@@ -5,26 +5,27 @@
     |               |               |               |               |
     V               V               V               V               V
 
------------------ CÓDIGO REPETIDO ----------------------------
+----------------- CÓDIGO REPETIDO --------------------------------------
+-Hemos unificado el despliegue, para no repetir el código.
 
------------------ CI y CD MEZCLADOS --------------------------
+----------------- CI y CD MEZCLADOS ------------------------------------
 - Hemos creado una custom action para la instalación de paquetes
 - Hemos creado una custom action para aplicar las configuraciones necesarias
 - No hemos hecho uan custom action para las variables porque habría que pasarle los secretos como inputs, y no lo hemos visto necesario porque es lo único que hacía el código era recuperar las variables.
 
----------------- DESPLIEGUES AUTOMATICOS ----------------------
+---------------- DESPLIEGUES AUTOMATICOS --------------------------------
 - Hemos creado una organización en github. Gracias al archivo CODEOWNERS, el .github solo puede ser modificado por el equipo DevOps
 - El repositorio tiene ahora entornos de desarrollo y producción, para permitir los despliegues sin autorización solo en DEV
 - También hemos restringidos los push a PROD
+- El workflow tiene un parámetro de adónde desplegar por defecto en DEV y despliega en el entorno especificado por parámetro.
 
----------------- DEPENDENCIA DE VALORES HARDCODEADOS ----------
+---------------- VALORES HARDCODEADOS Y SCRITPS SIN MODULARIZACIÓN -------
 - Hemos agregado inpus a la action de configuración, para poder cambiar rutas y valores rápidamente desde el worflow que llama a la custom action.
 
----------------- REUTILIZACIÓN DE SCRIPTS ---------------------
-
----------------- SECRETOS Y GESTIÓN SEGURA DE CREDENCIALES -----
+---------------- SECRETOS Y GESTIÓN SEGURA DE CREDENCIALES ---------------
 - Uso de secretos para guardar datos sensibles como DB_PASS_DEV,  DB_PASS_DEV y API_KEY_DEV
 - Para modifciar los secretos, acceder al repositorio de la organización > secrets and variables > actions > repository secrets
+- Las credenciales de producción solo pueden accederse en ese entorno
 
----------------- PRUEBAS SIN PARAMETRIZAR ----------------------
+---------------- PRUEBAS SIN PARAMETRIZAR --------------------------------
 - Permitimos parametrizar la version del test a realizar, que ademas se hace en una custom action.
