@@ -14,4 +14,4 @@ jobs:
         uses: ./.github/actions/install
 
       - name: Declarar variables
-        uses: ./.github/actions/variable
+        run: echo "Usuario ${{ secrets.DB_USER_DEV }}, Contraseña ${{ secrets.DB_PASS_DEV }}, Key ${{ secrets.API_KEY_DEV }},"
