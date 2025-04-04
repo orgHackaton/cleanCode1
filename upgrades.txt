@@ -6,7 +6,7 @@
     V               V               V               V               V
 
 ----------------- CÓDIGO REPETIDO --------------------------------------
--Hemos unificado el despliegue, para no repetir el código.
+-Hemos unificado el despliegue, para no repetir el código. Dependiendo del input, se despliega en un entorno u otro
 
 ----------------- CI y CD MEZCLADOS ------------------------------------
 - Hemos creado una custom action para la instalación de paquetes
