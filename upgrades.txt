@@ -28,4 +28,4 @@
 - Las credenciales de producción solo pueden accederse en ese entorno
 
 ---------------- PRUEBAS SIN PARAMETRIZAR --------------------------------
-- Permitimos parametrizar la version del test a realizar, que ademas se hace en una custom action.  hola
+- Permitimos parametrizar la version del test a realizar, que ademas se hace en una custom action.
